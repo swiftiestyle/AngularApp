@@ -1,0 +1,50 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  </div>
+<input #myinput type="text">
+<button (click)="getvalue(myinput.value)">Click to get the Information!</button>
+<div>
+
+  <div *ngIf="ISBi">
+  <div [(ngModel)]="ISB" ngDefaultControl> ISBN : {{ISB}}</div>
+</div>
+<div *ngIf="Title">
+  <div [(ngModel)]="Titl" ngDefaultControl> Title : {{Titl}}</div>
+</div>
+<div *ngIf="Subtitle">
+  <div [(ngModel)]="Subtit" ngDefaultControl> Subtitle : {{Subtit}}</div>
+</div>
+<div *ngIf="Description">
+  <div [(ngModel)]="Descript" ngDefaultControl> Description : {{Descript}}</div>
+</div>
+<div *ngIf="CoverThumb">
+  <div [(ngModel)]="CoverThum" ngDefaultControl>
+  </div>
+</div>
+<div *ngIf="LanguageCode">
+  <div [(ngModel)]="LanguageCod" ngDefaultControl > LanguageCode : {{LanguageCod}}</div>
+</div>
+<div *ngIf="Subjects">
+  <div [(ngModel)]="Subject" ngDefaultControl ngFor="let subj of Subject"> 
+ <div>Subject : {{Subject}}</div>
+  </div>
+</div>
+<div *ngIf="Authors">
+    <div *ngFor="let element of Author; let idx = index">
+      
+      
+          <div>Author : {{element.Name}}</div> 
+      
+      
+      </div>
+
+</div>
+
+
+</div>
+
+
+<router-outlet></router-outlet>
